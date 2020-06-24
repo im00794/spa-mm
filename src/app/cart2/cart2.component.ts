@@ -35,6 +35,6 @@ export class Cart2Component implements OnInit {
   }
   randomEntries() {
     this.cartService.addEntry('1002', 5);
-    this.cartService.addEntry('1003', 15);
+    this.cartService.addEntry('1003', 10);
   }
 }
