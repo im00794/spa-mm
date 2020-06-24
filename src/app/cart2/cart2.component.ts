@@ -25,8 +25,10 @@ export class Cart2Component implements OnInit {
   }
   loginForm() {
 
+    const uid = (document.getElementById('uid') as HTMLInputElement).value;
+    const pass = (document.getElementById('pass') as HTMLInputElement).value;
     // @ts-ignore
-    this.authService.authorize(document.getElementById(uid) , document.getElementById(pass));
+    this.authService.authorize(uid, pass);
   }
   logout() {
     this.authService.logout();
