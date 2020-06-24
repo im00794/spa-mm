@@ -23,8 +23,10 @@ export class Cart2Component implements OnInit {
   login() {
     this.authService.authorize('fredo1994007@gmail.com_mm', 'Mcm123');
   }
-  loginForm(uid: string, pass: string) {
-    this.authService.authorize(uid , pass);
+  loginForm() {
+
+    // @ts-ignore
+    this.authService.authorize(document.getElementById(uid) , document.getElementById(pass));
   }
   logout() {
     this.authService.logout();
