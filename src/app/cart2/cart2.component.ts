@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActiveCartService, AuthService, OccEndpointsService, OrderEntry, UserOrderService, UserService, UserToken} from '@spartacus/core';
 import {Observable} from 'rxjs';
-import {take} from 'rxjs/operators';
-// import {UserAuthenticationTokenService} from '@spartacus/core/src/auth/services/user-authentication/user-authentication-token.service';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-cart2',
@@ -11,24 +10,28 @@ import {take} from 'rxjs/operators';
 })
 export class Cart2Component implements OnInit {
 
+  loginForme = new FormGroup( {
+    uid: new FormControl(''),
+    pass: new FormControl(''),
+  });
+
+
   orderEntries$: Observable<OrderEntry[]> = this.cartService.getEntries();
 
   constructor(private cartService: ActiveCartService,
               private userService: UserService,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private formBuilder: FormBuilder) {
+
+  }
 
   ngOnInit(): void {
-
   }
   login() {
     this.authService.authorize('fredo1994007@gmail.com_mm', 'Mcm123');
   }
-  loginForm() {
-
-    const uid = (document.getElementById('uid') as HTMLInputElement).value;
-    const pass = (document.getElementById('pass') as HTMLInputElement).value;
-    // @ts-ignore
-    this.authService.authorize(uid, pass);
+  loginForm(credentials) {
+    this.authService.authorize(credentials.uid, credentials.pass);
   }
   logout() {
     this.authService.logout();

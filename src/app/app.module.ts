@@ -6,6 +6,7 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { Cart2Component } from './cart2/cart2.component';
 import {CustomRoutingModule} from './custom-routing/custom-routing.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import {CustomRoutingModule} from './custom-routing/custom-routing.module';
         }
       },
       context: {
-        urlParameters : ['baseSite', 'language', 'currency'],
-        baseSite : ['medimarket-be'],
+        urlParameters: ['baseSite', 'language', 'currency'],
+        baseSite: ['medimarket-be'],
         currency: ['EUR'],
         language: ['fr'],
       },
@@ -36,7 +37,8 @@ import {CustomRoutingModule} from './custom-routing/custom-routing.module';
         level: '2.0'
       }
     }),
-    CustomRoutingModule
+    CustomRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
