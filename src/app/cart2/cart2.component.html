@@ -1,27 +1,45 @@
 <!--<pre>{{ orderEntries$ | async | json }}</pre>-->
-<br />
-<button (click)="randomEntries()" >addEntries</button>
-<br />
-<button (click)="login()" >Login</button>
-<br />
-<button (click)="logout()" >Logout</button>
-<br />
+<!--<cx-page-layout class="LoginPageTemplate"-->
+<!--&gt;-->
+<!--  <cx-login-form></cx-login-form>-->
+<!--</cx-page-layout>-->
 
-<div>
-  <form  [formGroup]="loginForme"  (ngSubmit)="loginForm(loginForme.value)">
+
+
+<!--<br />-->
+<!--<button (click)="randomEntries()" >addEntries</button>-->
+<!--<br />-->
+<!--<button (click)="login()" >Login</button>-->
+<!--<br />-->
+<!--<button (click)="logout()" >Logout</button>-->
+<!--<br />-->
+
+<div class="form-group">
+<!--  <cx-banner></cx-banner>-->
+
+
+<!--  <cx-page-layout section="header" class="header"></cx-page-layout>-->
+
+  <form  novalidate class="ng-pristine ng-invalid ng-touched"
+    [formGroup]="loginForme"  (ngSubmit)="loginForm(loginForme.value)">
     <div>
       <label >
-        uid
+        <span class="label-content">Email address</span>
       </label>
-      <input type="text" formControlName="uid">
+
+      <input class="form-control ng-pristine  ng-touched"
+             type="email" placeholder="Enter email" formControlName="uid">
+
 
       <label >
-        password
+        <span class="label-content">Password</span>
       </label>
-      <input type="password" formControlName="pass">
+      <input class="form-control ng-pristine  ng-touched"
+             type="password" placeholder="Enter password" formControlName="pass">
 
     </div>
-        <button class="button" type="submit">Login</button>
+<!--        <button class="button" type="submit">Login</button>-->
+    <button type="submit" class="btn btn-block btn-primary"> Sign In </button>
   </form>
 
 

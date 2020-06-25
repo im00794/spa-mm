@@ -1,0 +1,24 @@
+
+<!--<div class="row">-->
+<!--  <ng-container *ngIf="productSearchPage$ | async as productsearchpage">-->
+<!--    <div class="col-12 col-lg-12" *ngFor="let product of productsearchpage.products">-->
+<!--      <app-plp-item [product$]="product"></app-plp-item>-->
+<!--    </div>-->
+<!--  </ng-container>-->
+
+<!--</div>-->
+<div class="row">
+  <div class="col-md-3">
+    <cx-product-facet-navigation></cx-product-facet-navigation>
+  </div>
+  <div class="col-md-8">
+    <cx-product-list ></cx-product-list>
+<!--    <cx-product-list-item product="1002"></cx-product-list-item>-->
+    <ng-container *ngIf="productSearchPage$ | async as productsearchpage">
+          <div class="col-12 col-lg-12" *ngFor="let product of productsearchpage.products">
+            <app-plp-item [product$]="product"></app-plp-item>
+            <cx-product-list-item product="product"></cx-product-list-item>
+          </div>
+        </ng-container>
+  </div>
+</div>

@@ -3,15 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { translations, translationChunksConfig } from '@spartacus/assets';
-import { B2cStorefrontModule } from '@spartacus/storefront';
+import {
+  AddToCartModule,
+  B2cStorefrontModule,
+  BannerModule,
+  HamburgerMenuModule, LoginFormModule,
+  PageLayoutModule, PageSlotModule,
+  ProductFacetNavigationModule, ProductListModule
+} from '@spartacus/storefront';
 import { Cart2Component } from './cart2/cart2.component';
 import {CustomRoutingModule} from './custom-routing/custom-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PlpComponent } from './components/demo-plp/plp/plp.component';
+import { DemoPlpComponent } from './components/demo-plp/demo-plp.component';
+import { FiltersComponent } from './components/demo-plp/filters/filters.component';
+import { PlpItemComponent } from './components/demo-plp/plp/plp-item/plp-item.component';
+import {CustomPlpModule} from './custom-plp/custom-plp.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Cart2Component
+    Cart2Component,
+    PlpComponent,
+    DemoPlpComponent,
+    FiltersComponent,
+    PlpItemComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +54,16 @@ import {ReactiveFormsModule} from '@angular/forms';
       }
     }),
     CustomRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BannerModule,
+    AddToCartModule,
+    HamburgerMenuModule,
+    PageLayoutModule,
+    ProductFacetNavigationModule,
+    CustomPlpModule,
+    LoginFormModule,
+    PageSlotModule,
+    ProductListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
