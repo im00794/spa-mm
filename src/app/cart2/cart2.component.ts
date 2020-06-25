@@ -18,7 +18,7 @@ export class Cart2Component implements OnInit {
 
 
   orderEntries$: Observable<OrderEntry[]> = this.cartService.getEntries();
-
+  isLoggedIn$: Observable<boolean> =  this.authService.isUserLoggedIn();
   constructor(private cartService: ActiveCartService,
               private userService: UserService,
               private authService: AuthService,

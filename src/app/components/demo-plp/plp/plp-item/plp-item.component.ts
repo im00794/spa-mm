@@ -20,6 +20,7 @@ export class PlpItemComponent implements OnInit {
 
   @Input()
   product$: Product;
+
   // products$: Observable<Product>;
 
   constructor(private cartService: ActiveCartService) { }
