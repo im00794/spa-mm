@@ -7,12 +7,13 @@ import { B2cStorefrontModule } from '@spartacus/storefront';
 import { Cart2Component } from './cart2/cart2.component';
 import { CustomRoutingModule } from './custom-routing/custom-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
 
 @NgModule({
   declarations: [AppComponent, Cart2Component],
   imports: [
     BrowserModule,
-
+    CustomPdpModule,
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
@@ -37,7 +38,6 @@ import { ReactiveFormsModule } from '@angular/forms';
       routing: {
         routes: {
           product: { paths: ['product/:productCode'] },
-          cart: { paths: ['cart'] },
         },
       },
     }),
