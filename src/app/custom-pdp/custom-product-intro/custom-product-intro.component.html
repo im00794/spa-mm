@@ -52,15 +52,19 @@
             </div>
           </div>
 
-          <div class="action">
+          <div class="action mb-3">
             <button
               class="add-to-cart btn btn-default"
               type="button"
               data-toggle="modal"
               data-target="#myModal"
+              [disabled]="product.stock.stockLevel < 1"
             >
               add to cart
             </button>
+          </div>
+          <div class="stockLevelStatus">
+            * {{ product.stock.stockLevelStatus }}
           </div>
         </div>
       </div>

@@ -31,11 +31,10 @@
           class="btn btn-danger"
           data-dismiss="modal"
           (click)="addToCart()"
+          [routerLink]="{ cxRoute: 'cart' } | cxUrl"
         >
-          <a [routerLink]="{ cxRoute: 'cart' }">finalize my order</a>
+          finalize my order1
         </button>
-
-        <a [routerLink]="{ cxRoute: 'cart' }">finalize my order</a>
       </div>
     </div>
   </div>

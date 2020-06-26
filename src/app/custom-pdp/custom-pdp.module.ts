@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomProductIntroComponent } from './custom-product-intro/custom-product-intro.component';
-import { ConfigModule, CmsConfig } from '@spartacus/core';
+import { ConfigModule, CmsConfig, UrlModule } from '@spartacus/core';
 import { StarRatingComponent, StarRatingModule } from '@spartacus/storefront';
 import { FormsModule } from '@angular/forms';
 import { AddToCartModalComponent } from './add-to-cart-modal/add-to-cart-modal.component';
@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
     StarRatingModule,
     FormsModule,
     RouterModule,
+    UrlModule,
     ConfigModule.withConfig({
       cmsComponents: {
         CMSTabParagraphContainer: {
