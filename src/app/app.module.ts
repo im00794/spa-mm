@@ -6,7 +6,7 @@ import { translations, translationChunksConfig } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { Cart2Component } from './cart2/cart2.component';
 import { CustomRoutingModule } from './custom-routing/custom-routing.module';
-import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, Cart2Component],
@@ -21,7 +21,7 @@ import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
         },
       },
       context: {
-        //urlParameters: ['baseSite', 'language', 'currency'],
+        urlParameters: ['baseSite', 'language', 'currency'],
         baseSite: ['medimarket-be'],
         currency: ['EUR'],
         language: ['fr'],
@@ -42,7 +42,7 @@ import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
       },
     }),
     CustomRoutingModule,
-    CustomPdpModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,14 +8,22 @@
 <br />
 
 <div>
+  <form  [formGroup]="loginForme"  (ngSubmit)="loginForm(loginForme.value)">
+    <div>
+      <label >
+        uid
+      </label>
+      <input type="text" formControlName="uid">
 
-    <label>UID(email+_mm)</label>
-    <input id="uid" type="text">
-    <br />
-    <label>Password</label>
-    <input id="pass" type="password">
-    <br />
-    <button (click)="loginForm()">login</button>
+      <label >
+        password
+      </label>
+      <input type="password" formControlName="pass">
+
+    </div>
+        <button class="button" type="submit">Login</button>
+  </form>
+
 
 </div>
 
