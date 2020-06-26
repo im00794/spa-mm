@@ -1,0 +1,81 @@
+<ng-template cxOutletRef="Tabs"> </ng-template>
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<ng-container *ngIf="product$ | async as product">
+  <div class="container">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="tab-pane active" id="pic-1">
+          <img
+            src="https://hancroft.co.nz/wp-content/uploads/2016/10/Image-Coming-Soon-400x400.jpg"
+          />
+        </div>
+        <div class="col-md-2"></div>
+        <div class="details col-md-4">
+          <h3 class="product-title">{{ product.name }}</h3>
+          <div class="rating">
+            <cx-star-rating
+              [rating]="product?.averageRating"
+              [disabled]="true"
+            ></cx-star-rating>
+            <span class="review-no"
+              >{{ product?.numberOfReviews }} reviews</span
+            >
+          </div>
+          <p class="product-description">
+            {{ product.description }}
+          </p>
+          <h4 class="price">
+            Our price: <span>{{ product.price.formattedValue }}</span>
+          </h4>
+
+          <div class="ctrl">
+            <div
+              class="ctrl__button ctrl__button--decrement"
+              (click)="counter('decrement')"
+            >
+              &ndash;
+            </div>
+            <div class="ctrl__counter">
+              <div class="ctrl__counter-num">{{ quantity }}</div>
+            </div>
+            <div
+              class="ctrl__button ctrl__button--increment"
+              (click)="counter('increment')"
+            >
+              +
+            </div>
+          </div>
+
+          <div class="action mb-3">
+            <button
+              class="add-to-cart btn btn-default"
+              type="button"
+              data-toggle="modal"
+              data-target="#myModal"
+              [disabled]="product.stock.stockLevel < 1"
+            >
+              add to cart
+            </button>
+          </div>
+          <div class="stockLevelStatus">
+            * {{ product.stock.stockLevelStatus }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-add-to-cart-modal
+    class="modal"
+    id="myModal"
+    [productName]="product.name"
+    [quantity]="quantity"
+    [productCode]="product.code"
+  ></app-add-to-cart-modal>
+</ng-container>
+<script src="./src/bootstrap-input-spinner.js"></script>
