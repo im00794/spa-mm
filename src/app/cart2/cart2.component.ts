@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ActiveCartService, AuthService, OccEndpointsService, OrderEntry, UserOrderService, UserService, UserToken} from '@spartacus/core';
+import {Component, OnInit} from '@angular/core';
+import {ActiveCartService, AuthService, OrderEntry, UserService} from '@spartacus/core';
 import {Observable} from 'rxjs';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -22,13 +22,11 @@ export class Cart2Component implements OnInit {
               private userService: UserService,
               private authService: AuthService,
               private formBuilder: FormBuilder,
-              private router: Router,) {
+              private router: Router) {}
 
 
   ngOnInit(): void {}
-  login() {
-    this.authService.authorize('hamza.enaime@outlook.com_mm', 'P@ss123MCM');
-  }
+
   loginForm(credentials) {
     this.authService.authorize(credentials.uid, credentials.pass);
     this.authService.isUserLoggedIn().subscribe(data => {
