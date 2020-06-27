@@ -6,9 +6,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {PlpComponent} from '../components/demo-plp/plp/plp.component';
 import {DemoPlpComponent} from '../components/demo-plp/demo-plp.component';
 
+
 const STATIC_ROUTES: Routes = [
-  { path: 'cart2',
+  {
+    path: 'cart2',
     component: Cart2Component,
+
     canActivate : [CmsPageGuard],
     data: {pageLabel: 'cart'}
   },
@@ -19,11 +22,9 @@ const STATIC_ROUTES: Routes = [
   }
   ];
 
+
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(STATIC_ROUTES)
-  ]
+  imports: [CommonModule, RouterModule.forChild(STATIC_ROUTES)],
 })
-export class CustomRoutingModule { }
+export class CustomRoutingModule {}

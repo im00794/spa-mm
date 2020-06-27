@@ -4,18 +4,17 @@ import {Observable} from 'rxjs';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-cart2',
   templateUrl: './cart2.component.html',
-  styleUrls: ['./cart2.component.scss']
+  styleUrls: ['./cart2.component.scss'],
 })
 export class Cart2Component implements OnInit {
-
-  loginForme = new FormGroup( {
+  loginForme = new FormGroup({
     uid: new FormControl(''),
     pass: new FormControl(''),
   });
-
 
   orderEntries$: Observable<OrderEntry[]> = this.cartService.getEntries();
   isLoggedIn$: Observable<boolean> =  this.authService.isUserLoggedIn();
@@ -25,12 +24,10 @@ export class Cart2Component implements OnInit {
               private formBuilder: FormBuilder,
               private router: Router,) {
 
-  }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   login() {
-    this.authService.authorize('fredo1994007@gmail.com_mm', 'Mcm123');
+    this.authService.authorize('hamza.enaime@outlook.com_mm', 'P@ss123MCM');
   }
   loginForm(credentials) {
     this.authService.authorize(credentials.uid, credentials.pass);
