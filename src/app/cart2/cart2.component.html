@@ -1,29 +1,31 @@
-<!--<pre>{{ orderEntries$ | async | json }}</pre>-->
-<br />
-<button (click)="randomEntries()" >addEntries</button>
-<br />
-<button (click)="login()" >Login</button>
-<br />
-<button (click)="logout()" >Logout</button>
-<br />
 
-<div>
-  <form  [formGroup]="loginForme"  (ngSubmit)="loginForm(loginForme.value)">
+<div class="form-group">
+
+  <ng-container *ngIf="(isLoggedIn$ | async )">
+    <button class="btn btn-block btn-secondary" (click)="logout()"> Logout </button>
+  </ng-container>
+  <ng-container *ngIf="!(isLoggedIn$ | async )">
+  <form  novalidate class="ng-pristine ng-invalid ng-touched"
+    [formGroup]="loginForme"  (ngSubmit)="loginForm(loginForme.value)">
     <div>
       <label >
-        uid
+        <span class="label-content">Email address</span>
       </label>
-      <input type="text" formControlName="uid">
+
+      <input class="form-control ng-pristine  ng-touched"
+             type="email" placeholder="Enter email" formControlName="uid">
+
 
       <label >
-        password
+        <span class="label-content">Password</span>
       </label>
-      <input type="password" formControlName="pass">
-
+      <input class="form-control ng-pristine  ng-touched"
+             type="password" placeholder="Enter password" formControlName="pass">
     </div>
-        <button class="button" type="submit">Login</button>
-  </form>
+         <button type="submit" class="btn btn-block btn-primary"> Sign In </button>
 
+  </form>
+  </ng-container>
 
 </div>
 

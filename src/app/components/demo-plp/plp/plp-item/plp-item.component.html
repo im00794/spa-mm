@@ -1,0 +1,21 @@
+<ng-container>
+<!--<div class="card mb-4 shadow-sm">-->
+  <img class="bd-placeholder-img card-img-top p-1" width="80%"
+       src="https://static.eau-thermale-avene.com/sites/files-fr/images/product/image/eau_thermale_avene-suncare-brand-website-cream-30-high-protection-50ml-skin-protect-ocean-respect-packshot-produ_44105.png" />
+  <div class="card-body">
+    <div class="card-body-title">{{product$.name}}
+    </div>
+    <p class="card-text">
+      <strong><small class="text-muted">{{  product$.price.formattedValue }}</small></strong>
+    </p>
+    <p class="card-text">{{product$.name}}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <cx-add-to-cart  [showQuantity]="false" [product]=product$></cx-add-to-cart>
+        <button type="button" class="btn btn-sm btn-outline-secondary">View Details</button>
+      </div>
+    </div>
+  </div>
+<!--</div>-->
+</ng-container>
+

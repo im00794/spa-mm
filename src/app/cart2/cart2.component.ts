@@ -1,16 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ActiveCartService,
-  AuthService,
-  OccEndpointsService,
-  OrderEntry,
-  UserOrderService,
-  UserService,
-  UserToken,
-} from '@spartacus/core';
-import { Observable } from 'rxjs';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { take } from 'rxjs/operators';
+import {ActiveCartService, AuthService, OccEndpointsService, OrderEntry, UserOrderService, UserService, UserToken} from '@spartacus/core';
+import {Observable} from 'rxjs';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-cart2',
@@ -24,13 +17,13 @@ export class Cart2Component implements OnInit {
   });
 
   orderEntries$: Observable<OrderEntry[]> = this.cartService.getEntries();
+  isLoggedIn$: Observable<boolean> =  this.authService.isUserLoggedIn();
+  constructor(private cartService: ActiveCartService,
+              private userService: UserService,
+              private authService: AuthService,
+              private formBuilder: FormBuilder,
+              private router: Router,) {
 
-  constructor(
-    private cartService: ActiveCartService,
-    private userService: UserService,
-    private authService: AuthService,
-    private formBuilder: FormBuilder
-  ) {}
 
   ngOnInit(): void {}
   login() {
@@ -38,6 +31,11 @@ export class Cart2Component implements OnInit {
   }
   loginForm(credentials) {
     this.authService.authorize(credentials.uid, credentials.pass);
+    this.authService.isUserLoggedIn().subscribe(data => {
+      if( data === true) {
+        this.router.navigate(['/']);
+      }
+    });
   }
   logout() {
     this.authService.logout();
@@ -45,5 +43,6 @@ export class Cart2Component implements OnInit {
   randomEntries() {
     this.cartService.addEntry('1002', 5);
     this.cartService.addEntry('1003', 10);
+    this.cartService.addEntry('1002', 5);
   }
 }
