@@ -1,15 +1,12 @@
-
+<cx-banner ></cx-banner>
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-2">
     <cx-product-facet-navigation></cx-product-facet-navigation>
   </div>
   <div class="col-md-8">
-    <cx-product-list ></cx-product-list>
-    <ng-container *ngIf="productSearchPage$ | async as productsearchpage">
-          <div class="col-12 col-lg-12" *ngFor="let product of productsearchpage.products">
-            <app-plp-item [product$]="product"></app-plp-item>
-            <cx-product-list-item [product]="product"></cx-product-list-item>
-          </div>
-        </ng-container>
+
+
   </div>
 </div>

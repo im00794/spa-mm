@@ -13,8 +13,7 @@ export class PlpComponent implements OnInit {
   constructor(private productSearchService: ProductSearchService) { }
 
   ngOnInit(): void {
-    this.productSearchService.search('100');
+    this.productSearchService.search('');
     this.productSearchPage$ = this.productSearchService.getResults();
   }
-
 }

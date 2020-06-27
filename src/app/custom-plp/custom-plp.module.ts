@@ -18,9 +18,6 @@ import {Cart2Component} from '../cart2/cart2.component';
         ProductRefinementComponent: {
           component: PlpComponent
         },
-        ProductStarsComponent: {
-          component: PlpComponent
-        },
         ReturningCustomerLoginComponent: {
           component: Cart2Component
         }
