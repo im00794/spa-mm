@@ -1,0 +1,97 @@
+/*! CSS Used from: https://medi-market.be/wro/lambda_responsive.css ; media=all */
+@media all{
+  section{display:block;}
+  a{background-color:transparent;}
+  a:active,a:hover{outline:0;}
+  img{border:0;}
+  @media print{
+    *,*:before,*:after{background:transparent!important;color:#000!important;box-shadow:none!important;text-shadow:none!important;}
+    a,a:visited{text-decoration:underline;}
+    a[href]:after{content:"(" attr(href) ")";}
+    img{page-break-inside:avoid;}
+    img{max-width:100%!important;}
+    h2{orphans:3;widows:3;}
+    h2{page-break-after:avoid;}
+  }
+  *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+  *:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+  a{color:#0068b3;text-decoration:none;}
+  a:hover,a:focus{color:#003c66;text-decoration:underline;}
+  a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+  img{vertical-align:middle;}
+  h2{font-family:inherit;font-weight:500;line-height:1.1;color:inherit;}
+  h2{margin-top:20px;margin-bottom:10px;}
+  h2{font-size:30px;}
+  .row{margin-left:-10px;margin-right:-10px;}
+  .col-sm-6,.col-xs-12{position:relative;min-height:1px;padding-left:10px;padding-right:10px;}
+  .col-xs-12{float:left;}
+  .col-xs-12{width:100%;}
+  @media (min-width:640px){
+    .col-sm-6{float:left;}
+    .col-sm-6{width:50%;}
+  }
+  .row:before,.row:after{content:" ";display:table;}
+  .row:after{clear:both;}
+  a{color:#0068b3;text-decoration:none;}
+  a:hover{text-decoration:none;}
+  @media screen and (min-width:1025px){
+    .pr-desktop-0{padding-right:0!important;}
+  }
+  @media screen and (min-width:1025px){
+    .col-wd-12{width:100%;}
+  }
+  @media screen and (min-width:1025px){
+    .col-wd-8{width:66.66666667%;}
+  }
+  @media screen and (min-width:1025px){
+    .col-wd-4{width:33.33333333%;}
+  }
+  .banner__component--responsive a{display:block;}
+  .banner__component--responsive img{width:100%;height:auto;}
+  .headline{font-size:18px;margin-bottom:10px;}
+  @media print{
+    a[href]:after{content:"";}
+    .col-xs-12{float:left;}
+    .col-xs-12{width:100%;}
+    .col-sm-6{float:left;}
+    .col-sm-6{width:50%;}
+  }
+  a{color:#49B0EC;}
+  a:hover,a:focus{color:#49B0EC;}
+  .headline{font-family:'BebasNeue';font-weight:bold;text-align:center;}
+  @media (max-width:642px){
+    .headline{padding-bottom:0;}
+  }
+  .headline__big-block{display:inline-block;}
+  @media (max-width:642px){
+    .headline__big-block{display:block;}
+  }
+  .headline__big{padding:6px 25px 5px;color:#ffffff;font-size:35px;display:inline-block;font-weight:bold;}
+  @media (max-width:642px){
+    .headline__big{transform:translateY(-8px);font-size:35px;line-height:35px;}
+  }
+  .headline--promotion .headline__big{font-family:'BebasNeue';font-weight:bold;text-align:center;border:1px solid #00A983;color:#00A983;padding:10px 25px 9px;}
+  @media screen and (min-width:1025px){
+    .headline--promotion + .l-block-cards__content .row .col-wd-4 .row{height:100%;flex-flow:column wrap;justify-content:space-between;}
+  }
+  .headline--promotion + .l-block-cards__content .row .col-wd-4 .col-xs-12{margin-bottom:15px;}
+  @media screen and (min-width:1025px){
+    .headline--promotion + .l-block-cards__content .row .col-wd-4 .col-xs-12{margin-bottom:0;}
+  }
+  .mb-24{margin-bottom:24px!important;}
+  .row:after,.row:before{display:none;}
+  .l-block-cards{overflow:hidden;padding:15px 122px;border:1px solid #f2f2f2;background-color:#ffffff;}
+  @media (max-width:1140px){
+    .l-block-cards{padding:15px 20px;}
+  }
+  .l-block-cards .row{display:flex;flex-flow:row wrap;}
+  .l-block-cards__title{margin-bottom:0;}
+  .l-block-cards__content{margin:32px 0 0 0;}
+  .l-block-cards__footer{text-align:center;}
+}
+/*! CSS Used fontfaces */
+@font-face{font-family:'BebasNeue';font-weight:100;font-style:normal;src:url('https://medi-market.be/_ui/responsive/theme-lambda/fonts/BebasNeue%20Thin.otf') format('opentype');}
+@font-face{font-family:'BebasNeue';font-weight:200;font-style:normal;src:url('https://medi-market.be/_ui/responsive/theme-lambda/fonts/BebasNeue%20Light.otf') format('opentype');}
+@font-face{font-family:'BebasNeue';font-weight:300;font-style:normal;src:url('https://medi-market.be/_ui/responsive/theme-lambda/fonts/BebasNeue%20Book.otf') format('opentype');}
+@font-face{font-family:'BebasNeue';font-weight:400;font-style:normal;src:url('https://medi-market.be/_ui/responsive/theme-lambda/fonts/BebasNeue%20Regular.otf') format('opentype');}
+@font-face{font-family:'BebasNeue';font-weight:700;font-style:normal;src:url('https://medi-market.be/_ui/responsive/theme-lambda/fonts/bebas-neue-bold.woff') format('woff'), url('https://medi-market.be/_ui/responsive/theme-lambda/fonts/BebasNeue%20Bold.otf') format('opentype');}

@@ -28,7 +28,7 @@ export class Cart2Component implements OnInit {
   ngOnInit(): void {}
 
   loginForm(credentials) {
-    this.authService.authorize(credentials.uid, credentials.pass);
+    this.authService.authorize(credentials.uid + '_mm', credentials.pass);
     this.authService.isUserLoggedIn().subscribe(data => {
       if( data === true) {
         this.router.navigate(['/']);

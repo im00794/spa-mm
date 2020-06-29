@@ -1,25 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { translations, translationChunksConfig } from '@spartacus/assets';
+import {AppComponent} from './app.component';
+import {translationChunksConfig, translations} from '@spartacus/assets';
 import {
   AddToCartModule,
   B2cStorefrontModule,
   BannerModule,
-  HamburgerMenuModule, LoginFormModule,
-  PageLayoutModule, PageSlotModule,
-  ProductFacetNavigationModule, ProductListModule
+  CategoryNavigationModule,
+  HamburgerMenuModule,
+  LoginFormModule,
+  PageLayoutModule,
+  PageSlotModule,
+  ProductFacetNavigationModule,
+  ProductListModule,
+  SiteContextSelectorModule
 } from '@spartacus/storefront';
-import { Cart2Component } from './cart2/cart2.component';
+import {Cart2Component} from './cart2/cart2.component';
 import {CustomRoutingModule} from './custom-routing/custom-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import { PlpComponent } from './components/demo-plp/plp/plp.component';
-import { DemoPlpComponent } from './components/demo-plp/demo-plp.component';
-import { FiltersComponent } from './components/demo-plp/filters/filters.component';
-import { PlpItemComponent } from './components/demo-plp/plp/plp-item/plp-item.component';
+import {PlpComponent} from './components/demo-plp/plp/plp.component';
+import {DemoPlpComponent} from './components/demo-plp/demo-plp.component';
+import {FiltersComponent} from './components/demo-plp/filters/filters.component';
+import {PlpItemComponent} from './components/demo-plp/plp/plp-item/plp-item.component';
 import {CustomPlpModule} from './custom-plp/custom-plp.module';
-import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
+import {CustomPdpModule} from './custom-pdp/custom-pdp.module';
+import {CustomFooterComponent} from './custom-footer/custom-footer.component';
+import {CustomHeaderComponent} from './custom-header/custom-header.component';
+import {CustomBlogComponent} from './custom-blog/custom-blog.component';
+import {RouterModule} from '@angular/router';
+import {UrlModule} from '@spartacus/core';
 
 @NgModule({
   declarations: [
@@ -28,7 +38,10 @@ import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
     PlpComponent,
     DemoPlpComponent,
     FiltersComponent,
-    PlpItemComponent
+    PlpItemComponent,
+    CustomFooterComponent,
+    CustomHeaderComponent,
+    CustomBlogComponent,
   ],
 
   imports: [
@@ -37,8 +50,8 @@ import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
     B2cStorefrontModule.withConfig({
       backend: {
         occ: {
-          baseUrl: 'https://medicaremarket.local:9002',
-          prefix: '/mcmcomspartacus/v2/',
+          baseUrl: 'https://local.medi-market.be:9002',
+          prefix: '/rest/v2/',
         },
       },
       context: {
@@ -57,7 +70,7 @@ import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
       },
       routing: {
         routes: {
-          product: { paths: ['product/:productCode'] },
+          product: {paths: ['product/:productCode']},
         },
       },
     }),
@@ -71,7 +84,11 @@ import { CustomPdpModule } from './custom-pdp/custom-pdp.module';
     CustomPlpModule,
     LoginFormModule,
     PageSlotModule,
-    ProductListModule
+    ProductListModule,
+    RouterModule,
+    UrlModule,
+    CategoryNavigationModule,
+    SiteContextSelectorModule
 
   ],
   providers: [],

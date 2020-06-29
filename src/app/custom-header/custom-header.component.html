@@ -1,0 +1,16 @@
+<div  class="row ">
+
+  <ng-container *ngIf="(isLoggedIn$ | async )" >
+    <div class="col-md-6">
+    <ng-container *ngIf="(user$ | async ) as user">
+     Bonjour, {{user.name}}
+  </ng-container>
+    </div>
+    <div class="col-md-6">
+    <button class="btn btn-block btn-secondary" (click)="logout()"> Logout </button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!(isLoggedIn$ | async )">
+  <a class="btn btn-outline-primary" [routerLink]="{ cxRoute: 'login'} | cxUrl">Sign up</a>
+  </ng-container>
+</div>
