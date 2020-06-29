@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActiveCartService } from '@spartacus/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActiveCartService} from '@spartacus/core';
 
 @Component({
   selector: 'app-add-to-cart-modal',

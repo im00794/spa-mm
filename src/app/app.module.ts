@@ -19,15 +19,15 @@ import {
 import {Cart2Component} from './cart2/cart2.component';
 import {CustomRoutingModule} from './custom-routing/custom-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import {PlpComponent} from './components/demo-plp/plp/plp.component';
+import {PlpComponent} from './components/plp/plp.component';
 import {DemoPlpComponent} from './components/demo-plp/demo-plp.component';
 import {FiltersComponent} from './components/demo-plp/filters/filters.component';
-import {PlpItemComponent} from './components/demo-plp/plp/plp-item/plp-item.component';
-import {CustomPlpModule} from './custom-plp/custom-plp.module';
-import {CustomPdpModule} from './custom-pdp/custom-pdp.module';
-import {CustomFooterComponent} from './custom-footer/custom-footer.component';
-import {CustomHeaderComponent} from './custom-header/custom-header.component';
-import {CustomBlogComponent} from './custom-blog/custom-blog.component';
+import {PlpItemComponent} from './components/plp/plp-item/plp-item.component';
+import {CustomPlpModule} from './components/plp/custom-plp/custom-plp.module';
+import {CustomPdpModule} from './components/custom-pdp/custom-pdp.module';
+import {CustomFooterComponent} from './components/custom-footer/custom-footer.component';
+import {CustomHeaderComponent} from './components/custom-header/custom-header.component';
+import {CustomBlogComponent} from './components/custom-blog/custom-blog.component';
 import {RouterModule} from '@angular/router';
 import {UrlModule} from '@spartacus/core';
 
