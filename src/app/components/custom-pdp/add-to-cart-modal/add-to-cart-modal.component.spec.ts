@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AddToCartModalComponent } from './add-to-cart-modal.component';
+import {AddToCartModalComponent} from './add-to-cart-modal.component';
 
 describe('AddToCartModalComponent', () => {
   let component: AddToCartModalComponent;

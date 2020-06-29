@@ -1,15 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {
-  ActiveCartService,
-  Product,
-  ProductPageMetaResolver,
-  ProductSearchPage,
-  ProductSearchService,
-  ProductService
-} from '@spartacus/core';
-import {Observable} from 'rxjs';
-import {filter, pluck, take} from 'rxjs/operators';
-import {async} from '@angular/core/testing';
+import {ActiveCartService, Product} from '@spartacus/core';
 
 @Component({
   selector: 'app-plp-item',

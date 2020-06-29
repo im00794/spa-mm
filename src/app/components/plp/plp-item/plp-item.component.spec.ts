@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PlpItemComponent } from './plp-item.component';
+import {PlpItemComponent} from './plp-item.component';
 
 describe('PlpItemComponent', () => {
   let component: PlpItemComponent;

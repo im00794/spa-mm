@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {Cart2Component} from '../cart2/cart2.component';
 import {CmsPageGuard} from '@spartacus/storefront';
 import {RouterModule, Routes} from '@angular/router';
-import {DemoPlpComponent} from '../components/demo-plp/demo-plp.component';
 
 
 const STATIC_ROUTES: Routes = [
@@ -13,11 +12,6 @@ const STATIC_ROUTES: Routes = [
 
     canActivate : [CmsPageGuard],
     data: {pageLabel: 'cart'}
-  },
-  { path: 'demo-plp',
-    component: DemoPlpComponent,
-    canActivate : [CmsPageGuard],
-    data: {pageLabel: 'search/100'}
   }
   ];
 

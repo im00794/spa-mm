@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Product } from '@spartacus/core';
-import { CurrentProductService } from '@spartacus/storefront';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Product} from '@spartacus/core';
+import {CurrentProductService} from '@spartacus/storefront';
 
 @Component({
   selector: 'app-custom-product-intro',

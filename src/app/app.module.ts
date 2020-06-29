@@ -20,8 +20,6 @@ import {Cart2Component} from './cart2/cart2.component';
 import {CustomRoutingModule} from './custom-routing/custom-routing.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {PlpComponent} from './components/plp/plp.component';
-import {DemoPlpComponent} from './components/demo-plp/demo-plp.component';
-import {FiltersComponent} from './components/demo-plp/filters/filters.component';
 import {PlpItemComponent} from './components/plp/plp-item/plp-item.component';
 import {CustomPlpModule} from './components/plp/custom-plp/custom-plp.module';
 import {CustomPdpModule} from './components/custom-pdp/custom-pdp.module';
@@ -36,8 +34,6 @@ import {UrlModule} from '@spartacus/core';
     AppComponent,
     Cart2Component,
     PlpComponent,
-    DemoPlpComponent,
-    FiltersComponent,
     PlpItemComponent,
     CustomFooterComponent,
     CustomHeaderComponent,
